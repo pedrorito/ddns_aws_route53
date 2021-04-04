@@ -17,9 +17,6 @@ RUN apt install -y nano curl jq cron awscli
 
 WORKDIR /root
 
-# Copy AWS configuration files
-#COPY ./.aws/ ./.aws/
-
 # Copy Update DNS script
 COPY update_dns.sh .
 RUN chmod 0744 ./update_dns.sh
@@ -32,4 +29,3 @@ RUN chmod 0644 /etc/cron.d/update-dns
 COPY entrypoint.sh .
 RUN chmod 0744 ./update_dns.sh
 ENTRYPOINT ["sh", "entrypoint.sh"]
-#CMD ["cron", "-f"]
