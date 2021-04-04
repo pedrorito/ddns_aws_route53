@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    ddns_aws_route53:
+        build: .
+        env_file:
+            - aws_variables.env
+        restart: always
+        image: ddns_aws_route53
+        container_name: ddns_aws_route53
