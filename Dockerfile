@@ -27,5 +27,5 @@ RUN chmod 0644 /etc/cron.d/update-dns
 
 # Run the command on container startup
 COPY entrypoint.sh .
-RUN chmod 0744 ./update_dns.sh
+RUN chmod 0744 ./entrypoint.sh
 ENTRYPOINT ["sh", "entrypoint.sh"]
